@@ -1,0 +1,33 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+h2 {
+    margin: 20px;
+    text-align: center;
+    color: #001e50;
+    font-weight: 700;
+    background-color: #f0f4ff;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+ul li {
+    background: #f0f4ff;
+    padding: 12px 18px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+h2:hover, ul li:hover {
+    background-color: #001c5d;
+    color: yellow;
+    cursor: default;
+}

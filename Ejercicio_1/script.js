@@ -1,7 +1,7 @@
 const operacion = document.getElementById('operacion');
 const boton = document.getElementById('calcular');
 const resultado = document.getElementById('resultado');
-
+/*
 // Deshabilitar el botón de calcular si es división
 operacion.addEventListener('change', () => {
     if (operacion.value === 'division') {
@@ -12,7 +12,7 @@ operacion.addEventListener('change', () => {
         resultado.textContent = " ";
     }
 });
-
+*/
 // Resolver la operacion y mostrar
 boton.addEventListener('click', () => {
     // Tomar los valores ingresados
@@ -31,7 +31,13 @@ boton.addEventListener('click', () => {
         case 'multiplicacion':
           res = num1 * num2;
           break;
-    }
+        case 'division':
+          if (num2 === 0) {
+            resultado.textContent = "No se puede resolver una division por cero."
+          } else {
+            res = num1 / num2; 
+          }
+      }
     console.log("Resultado: ", res)
     resultado.textContent = "Resultado: " + res;
 });

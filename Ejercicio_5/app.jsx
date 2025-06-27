@@ -28,14 +28,23 @@ function App() {
         res = n1 * n2;
         break;
       case "division":
-        res = "La division no está habilitada en este momento";
+        res = n1 / n2;
         break;
       default:
         res = "Operacion no valida.";
     }
-
     setResultado("Resultado: " + res);
   };
+  // funcion para inhabilitar la division cuando algun numero sea cero
+  let esDivisionPorCero = false;
+  
+  if (operacion === "division") {
+    const n1 = parseFloat(numero1);
+    const n2 = parseFloat(numero2);
+    if (n1 === 0 || n2 === 0) {
+      esDivisionPorCero = true;
+    }
+  }
 
   return (
     <div style={{ padding: "30px", fontFamily: "Arial", maxWidth: "400px", margin: "auto" }}>
@@ -70,15 +79,15 @@ function App() {
 
       <button
         onClick={calcular}
-        disabled={operacion === "division"} // se desactiva si es división
+        disabled={esDivisionPorCero} 
         style={{
           width: "100%",
           padding: "10px",
-          backgroundColor: operacion === "division" ? "#ccc" : "#28a745",
+          backgroundColor: esDivisionPorCero ? "#ccc" : "#28a745",
           color: "white",
           border: "none",
           fontWeight: "bold",
-          cursor: operacion === "division" ? "not-allowed" : "pointer"
+          cursor: esDivisionPorCero  ? "not-allowed" : "pointer"
         }}
       >
         Calcular
